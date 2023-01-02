@@ -1,0 +1,18 @@
+<html>
+<head>
+  <title>Device and Browser Information</title>
+</head>
+<body>
+  <h1>Device and Browser Information</h1>
+  <p id="device-info"></p>
+  <script>
+    function getDeviceInfo() {
+      var deviceInfo = "";
+      deviceInfo += "Browser: " + navigator.userAgent + "<br>";
+      deviceInfo += "Platform: " + navigator.platform + "<br>";
+      return deviceInfo;
+    }
+    document.getElementById("device-info").innerHTML = getDeviceInfo();
+  </script>
+</body>
+</html>
