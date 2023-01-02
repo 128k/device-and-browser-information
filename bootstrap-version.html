@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title>Device and Browser Information</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="card">
+      <div class="card-header">
+        Device and Browser Information
+      </div>
+      <ul class="list-group list-group-flush" id="device-info">
+        <!-- List items will be added here by JavaScript -->
+      </ul>
+    </div>
+  </div>
+  <script>
+    function getDeviceInfo() {
+      var deviceInfo = [];
+      deviceInfo.push({label: "Browser", value: navigator.userAgent});
+      deviceInfo.push({label: "Platform", value: navigator.platform});
+      return deviceInfo;
+    }
+    var deviceInfoList = document.getElementById("device-info");
+    var deviceInfo = getDeviceInfo();
+    deviceInfo.forEach(function(item) {
+      var listItem = document.createElement("li");
+      listItem.classList.add("list-group-item");
+      listItem.innerHTML = "<b>" + item.label + ":</b> " + item.value;
+      deviceInfoList.appendChild(listItem);
+    });
+  </script>
+  <!-- Bootstrap JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.16.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>
